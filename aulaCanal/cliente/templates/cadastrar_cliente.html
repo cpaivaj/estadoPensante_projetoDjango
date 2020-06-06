@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
     <p>Novo cliente</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ cliente_form.non_field_errors }}
+        {{ cliente_form|crispy }}
+
+        <button type="submit" class="btn btn-outline-success">Salvar</button>
+    </form>
 
 {% endblock %}

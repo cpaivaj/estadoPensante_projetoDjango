@@ -38,11 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+
     'aulaCanal.core',
     'aulaCanal.cliente',
     'aulaCanal.produto',
     'aulaCanal.compra',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

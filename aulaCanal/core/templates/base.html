@@ -24,7 +24,6 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{% url 'cadastrar_cliente' %}">Novo</a>
                         <a class="dropdown-item" href="{% url 'consultar_cliente' %}">Consutar</a>
-                        <a class="dropdown-item" href="{% url 'deletar_cliente' %}">Apagar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -51,8 +50,6 @@
 
         {% block content %}
         {% endblock %}
-
-        <button class="btn btn-primary">Teste</button>
         
     </div>
 

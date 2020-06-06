@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
     <p>Nova compra</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ compra_form.non_field_errors }}
+        {{ compra_form|crispy }}
+
+        <button type="submit" class="btn btn-outline-success">Salvar</button>
+    </form>
 
 {% endblock %}
