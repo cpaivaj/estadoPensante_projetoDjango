@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .forms import NovaCompraForm, BuscaCompraForm
+from django.urls import reverse # permite usar url no formato de template tag ao inves de digitar a url completa
+from django.http import HttpResponseRedirect
+
 
 # Create your views here.
 def cadastrar_compra(request):
@@ -8,7 +11,12 @@ def cadastrar_compra(request):
     compra_form = NovaCompraForm()
 
     if request.POST:
-        print('salva compra')
+        compra_form = NovaCompraForm(data=request.POST)
+
+        if compra_form.is_valid():
+            compra_form.save()
+
+        return HttpResponseRedirect(reverse('home'))
 
     context = {
         'compra_form': compra_form

@@ -4,4 +4,12 @@
 
     <p>Remover cliente</p>
 
+    <form method="POST">
+        {% csrf_token %}
+        <p>Confirma a remoção do cliente '{{ cliente.nome }}'?</p>
+        
+        <button type="submit" class="btn btn-danger">Apagar cliente</button>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+
 {% endblock %}
